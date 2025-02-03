@@ -20,14 +20,14 @@ function agregarAmigo() {
 
     amigos.push(nom);
     actualizarListaAmigos();
-
     inputAmigo.value = '';
+    limpiarResultadoGanador();
 }
 
 // Funcionalidad para actualizar la lista de amigos
 function actualizarListaAmigos() {
     let listaAmigos = document.querySelector('#listaAmigos');
-    listaAmigos.innerHTML = "";
+    listaAmigos.innerHTML = '';
 
     amigos.forEach((amigo) => {
         let li = document.createElement("LI");
@@ -46,6 +46,14 @@ function sortearAmigo() {
     let indiceAleatorio = Math.floor(Math.random() * amigos.length);
     let amigoSorteado = amigos[indiceAleatorio];
 
-    let resultado = document.getElementById("resultado");
+    let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<li>${amigoSorteado} es el amigo secreto 🎉</li>`;
+
+    amigos.splice(indiceAleatorio, 1);    
+    actualizarListaAmigos();
+}
+
+function limpiarResultadoGanador() {
+    let resultadoGanador = document.getElementById('resultado');
+    resultadoGanador.innerHTML = '';
 }

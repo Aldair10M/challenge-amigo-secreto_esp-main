@@ -9,7 +9,7 @@ function agregarAmigo() {
     let nom = inputAmigo.value.trim();
 
     if (nom === '') {
-        alert("Por favor, inserte un nombre");
+        alert('Por favor, inserte un nombre');
         return;
     }
 
@@ -30,7 +30,7 @@ function actualizarListaAmigos() {
     listaAmigos.innerHTML = '';
 
     amigos.forEach((amigo) => {
-        let li = document.createElement("LI");
+        let li = document.createElement('LI');
         li.textContent = amigo;
         listaAmigos.appendChild(li);
     });
@@ -39,7 +39,7 @@ function actualizarListaAmigos() {
 // Funcionalidad para sortear al amigo secreto
 function sortearAmigo() {
     if (amigos.length === 0) {
-        alert("No hay amigos en la lista para sortear");
+        alert('No hay amigos en la lista para sortear');
         return;
     }
 
